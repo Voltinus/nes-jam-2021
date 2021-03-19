@@ -1,6 +1,20 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://misc/theme.tres" type="Theme" id=1]
 
 [node name="MainMenu" type="Control"]
+theme = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BottomLabel" type="Label" parent="."]
+margin_top = 214.0
+margin_right = 256.0
+margin_bottom = 240.0
+text = "made for the nes gamejam 2021"
+align = 1
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
