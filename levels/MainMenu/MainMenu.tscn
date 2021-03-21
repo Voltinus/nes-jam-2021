@@ -18,3 +18,15 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="PressAnyKey" type="Label" parent="."]
+margin_top = 88.0
+margin_right = 256.0
+margin_bottom = 241.0
+text = "press any key
+to start"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
