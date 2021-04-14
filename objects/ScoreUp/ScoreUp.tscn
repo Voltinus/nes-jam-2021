@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://misc/theme.tres" type="Theme" id=1]
+[ext_resource path="res://objects/ScoreUp/ScoreUp.gd" type="Script" id=2]
+[ext_resource path="res://objects/ScoreUp/pickup.wav" type="AudioStream" id=3]
+
+[node name="ScoreUp" type="Label"]
+margin_right = 8.0
+margin_bottom = 12.0
+theme = ExtResource( 1 )
+text = "0"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -20.0
+autoplay = true

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/mvb2.wav-94a992f373e309ad64e5ea3d9abb485b.sample"
+
+[deps]
+
+source_file="res://misc/mvb2.wav"
+dest_files=[ "res://.import/mvb2.wav-94a992f373e309ad64e5ea3d9abb485b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

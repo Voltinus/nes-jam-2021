@@ -8,22 +8,44 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "KinematicBody2D",
+"class": "Enemy",
+"language": "GDScript",
+"path": "res://templates/Enemy/Enemy.gd"
+}, {
+"base": "Area2D",
+"class": "Pickup",
+"language": "GDScript",
+"path": "res://templates/Pickup/Pickup.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Player",
+"language": "GDScript",
+"path": "res://objects/Player/Player.gd"
+} ]
 _global_script_class_icons={
-
+"Enemy": "",
+"Pickup": "",
+"Player": ""
 }
 
 [application]
 
 config/name="NES Jam 2021"
+run/main_scene="res://levels/MainMenu/MainMenu.tscn"
 config/icon="res://misc/icon.png"
+
+[autoload]
+
+G="*res://misc/G.tscn"
 
 [display]
 
 window/size/width=256
 window/size/height=240
-window/size/test_width=512
-window/size/test_height=480
+window/size/test_width=768
+window/size/test_height=720
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 
@@ -86,9 +108,10 @@ a={
 
 2d_physics/layer_1="player"
 2d_physics/layer_2="player_bullets"
-2d_physics/layer_3="enemy"
+2d_physics/layer_3="enemies"
 2d_physics/layer_4="enemy_bullets"
 2d_physics/layer_5="terrain"
+2d_physics/layer_6="pickups"
 
 [rendering]
 

@@ -1,18 +1,55 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://misc/theme.tres" type="Theme" id=1]
+[ext_resource path="res://levels/MainMenu/title.png" type="Texture" id=2]
+[ext_resource path="res://levels/MainMenu/MainMenu.gd" type="Script" id=3]
+
+[sub_resource type="Animation" id=1]
+resource_name = "default"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("PressAnyKey:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "default"
+length = 10.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("BottomLabel:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 10 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 256, 214 ), Vector2( -584, 214 ) ]
+}
 
 [node name="MainMenu" type="Control"]
 theme = ExtResource( 1 )
+script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="BottomLabel" type="Label" parent="."]
+margin_left = -551.802
 margin_top = 214.0
-margin_right = 256.0
+margin_right = 32.1977
 margin_bottom = 240.0
-text = "made for the nes gamejam 2021"
+text = "made for the nes gamejam 2021. code: voltinus, graphics: amazonit & gregorious"
 align = 1
 valign = 1
 __meta__ = {
@@ -20,13 +57,30 @@ __meta__ = {
 }
 
 [node name="PressAnyKey" type="Label" parent="."]
-margin_top = 88.0
+margin_top = 121.0
 margin_right = 256.0
-margin_bottom = 241.0
-text = "press any key
+margin_bottom = 216.0
+text = "press start key
 to start"
 align = 1
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Logo" type="TextureRect" parent="."]
+margin_right = 256.0
+margin_bottom = 122.0
+texture = ExtResource( 2 )
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PressAnyKeyBlink" type="AnimationPlayer" parent="."]
+autoplay = "default"
+anims/default = SubResource( 1 )
+
+[node name="BottomMarquee" type="AnimationPlayer" parent="."]
+autoplay = "default"
+anims/default = SubResource( 2 )
